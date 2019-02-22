@@ -1,0 +1,54 @@
+{
+  "name": "graphql-server",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Graphql server boilerplate",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/ioredis": "^4.0.8",
+    "@types/jest": "^24.0.5",
+    "@types/node": "^11.9.4",
+    "@types/uuid": "^3.4.4",
+    "gql2ts": "^1.10.1",
+    "jest": "^24.0.0",
+    "start-server-and-test": "^1.7.11",
+    "ts-jest": "^24.0.0",
+    "ts-node": "8.0.2",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "3.3.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "graphql-import": "^0.7.1",
+    "graphql-request": "^1.8.2",
+    "graphql-yoga": "^1.17.4",
+    "ioredis": "^4.6.2",
+    "pg": "^7.8.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "0.2.13",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "NODE_ENV=development nodemon --exec ts-node --files src/index.ts",
+    "test:server": "NODE_ENV=test ts-node --files src/index.ts",
+    "test:start": "NODE_ENV=test jest --detectOpenHandles --forceExit",
+    "gen-schema-type": "gql2ts src/schema.graphql -o src/types/schema.d.ts",
+    "test": "start-server-and-test test:server http://localhost:4000 test:start"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
