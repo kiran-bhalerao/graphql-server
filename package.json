@@ -9,6 +9,7 @@
     "@types/jest": "^24.0.5",
     "@types/node": "^11.9.4",
     "@types/uuid": "^3.4.4",
+    "@types/yup": "^0.26.9",
     "gql2ts": "^1.10.1",
     "jest": "^24.0.0",
     "start-server-and-test": "^1.7.11",
@@ -27,7 +28,8 @@
     "pg": "^7.8.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "0.2.13",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "yup": "^0.26.10"
   },
   "scripts": {
     "start": "ts-node src/index.ts",
